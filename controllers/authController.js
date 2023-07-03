@@ -44,7 +44,7 @@ export const registerController = async (req, res, next) => {
         pass: process.env.EMAIL_PASSWORD,
       },
     });
-    let url = `http://localhost:8000/api/v1/auth/verify/${token}`;
+    let url = `${process.env.AUTH_VERIFY}/${token}`;
     let mailOptions = {
       from: process.env.EMAIL_USERNAME,
       to: email,
